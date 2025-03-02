@@ -1,0 +1,85 @@
+body {
+    width: 300px;
+    margin: 0;
+    padding: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+h1 {
+    font-size: 16px;
+    margin: 0 0 16px 0;
+    color: #0a66c2;
+    text-align: center;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #0a66c2;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 16px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.message {
+    font-size: 14px;
+    text-align: left;
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
+.message.interesting {
+    background-color: #e8f0fe;
+    color: #0a66c2;
+    border-left: 4px solid #0a66c2;
+}
+
+.message.fluffy {
+    background-color: #fff4e5;
+    color: #915907;
+    border-left: 4px solid #915907;
+}
+
+#read-btn {
+    width: 100%;
+    background-color: #0a66c2;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#read-btn:hover {
+    background-color: #084482;
+}
+
+#read-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: #d32f2f;
+    font-size: 14px;
+    text-align: center;
+    margin: 16px 0;
+    padding: 12px;
+    background-color: #ffebee;
+    border-radius: 4px;
+}

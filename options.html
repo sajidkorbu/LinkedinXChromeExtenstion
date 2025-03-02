@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LinkedIn Post Analyzer Settings</title>
+    <style>
+        body {
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+        button {
+            background-color: #0a66c2;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .message {
+            margin-top: 16px;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        .error {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+        .instructions {
+            background-color: #f5f5f5;
+            padding: 16px;
+            border-radius: 4px;
+            margin-bottom: 24px;
+        }
+        .instructions h2 {
+            margin-top: 0;
+            font-size: 16px;
+        }
+        .instructions ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .security-note {
+            margin-top: 16px;
+            font-size: 14px;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LinkedIn Post Analyzer Settings</h1>
+        <div class="instructions">
+            <h2>How to get your OpenAI API Key:</h2>
+            <ol>
+                <li>Go to <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI API Keys</a></li>
+                <li>Click "Create new secret key"</li>
+                <li>Give it a name (e.g., "LinkedIn Post Analyzer")</li>
+                <li>Copy the key (starts with 'sk-')</li>
+                <li>Paste it below and click Save</li>
+            </ol>
+        </div>
+        <div>
+            <label for="apiKey">OpenAI API Key:</label>
+            <input type="password" id="apiKey" placeholder="Enter your OpenAI API key">
+            <button id="save">Save</button>
+        </div>
+        <div id="message" class="message" style="display: none;"></div>
+        <div class="security-note">
+            <p><strong>Security Note:</strong> Your API key is stored securely on your device only. While the key is used to make direct API calls to OpenAI when analyzing posts, it is never shared with us or any third parties. Each user of this extension needs to provide their own API key for the analysis to work.</p>
+            <p>The extension only uses your key to send post content to OpenAI for analysis, and this happens directly from your browser to OpenAI's servers.</p>
+        </div>
+    </div>
+    <script src="options.js"></script>
+</body>
+</html>

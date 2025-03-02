@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn & X Post Reader",
+  "version": "1.0.1",
+  "description": "AI-powered tool to analyze LinkedIn and X (Twitter) posts for meaningful content and readability. Get instant feedback on post quality.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.linkedin.com/*",
+    "https://*.twitter.com/*",
+    "https://twitter.com/*",
+    "https://x.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.svg",
+      "48": "icons/icon48.svg",
+      "128": "icons/icon128.svg"
+    }
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.linkedin.com/*",
+        "https://*.twitter.com/*",
+        "https://twitter.com/*",
+        "https://x.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.svg",
+    "48": "icons/icon48.svg",
+    "128": "icons/icon128.svg"
+  },
+  "author": "LinkedIn Post Analyzer Team",
+  "homepage_url": "https://github.com/your-username/linkedin-post-analyzer",
+  "short_name": "Post Reader",
+  "offline_enabled": false,
+  "minimum_chrome_version": "88"
+}
